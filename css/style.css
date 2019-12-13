@@ -1,0 +1,226 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Chewy', cursive;
+}
+
+.container {
+    width: 38rem;
+    margin: 0 auto;
+}
+
+.cards-container {
+    width: 34rem;
+    height: 34rem;
+    background-color: rgb(168, 71, 168);
+    display: flex;
+    margin: 0 auto;
+    border-radius: .4rem;
+}
+
+.cards-wrapper {
+    width: 96%;
+    height: 96%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    align-self: center; 
+    perspective: 1000px;
+}
+
+.card {
+    cursor: pointer;
+    width: 7.5rem;
+    height: 7.5rem;
+    position: relative;
+    margin: .3rem;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+    background-color: white;
+    box-shadow: 5px 6px 12px 0 rgba(46, 61, 73, 0.582); 
+    border-radius: .9rem
+}
+.card:hover > .front-face {
+    transform: scale(1.009);
+    transition: transform .3s;
+}
+
+.card:active {
+    transform: scale(.97);
+    transition: transform .2s;
+}
+
+.card.flip {
+    transform: rotateY(180deg);
+}
+
+.card.match {
+	animation-name: pulse;
+	animation-duration: .5s;
+}
+
+.card.hide {
+    visibility: hidden;
+}
+
+.front-face {
+    position: absolute;
+    backface-visibility: hidden;
+    z-index: 100;  
+}
+
+.back-face {
+    position: absolute;   
+    width: 5rem; 
+    top: 50%;
+    left: 50%;
+    transform:  translate(-50%, -50%);
+}
+
+header {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgba(30, 86, 150, 0.986);
+    letter-spacing: .5rem;
+    width: 58.5%;
+    margin: .5rem auto 0;
+    position: relative;
+}
+
+.santas-hat {
+    position: absolute;
+    left: 3%;
+    top: 2%;
+    width: 2.7rem;
+    transform: rotate(-20deg) translate(-50%, -50%)
+}
+
+
+.prop-panel {
+	text-align: left;
+    margin-bottom: .5rem;
+    display: flex;
+    justify-content: space-between;
+    width: 83%;
+    margin: 0 auto;
+}
+
+.restart {
+    cursor: pointer;
+    font-size: 1.4rem;
+    color: rgb(226, 64, 43);
+}
+
+.move-prop {
+    font-size: 1.2rem;
+    color: rgb(226, 64, 43);
+}
+
+/*
+ * Styles for congratulations modal
+ */
+
+.overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.7);
+	transition: opacity 500ms;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.overlay:target {
+	visibility: visible;
+	opacity: 1;
+}
+  
+.popup {
+	margin: 6rem auto;
+	padding: 2rem;
+	background: #ffffff;
+	border-radius: 5px;
+    width: 40rem;
+	position: relative;
+	transition: all 5s ease-in-out;
+	font-family: 'Gloria Hallelujah', cursive;
+}
+  
+.popup h2 {
+	margin-top: 0;
+	color: #333;
+	font-family: Tahoma, Arial, sans-serif;
+}
+
+.popup .close {
+	position: absolute;
+	top: .5rem;
+	right: 30px;
+	transition: all 200ms;
+	font-size: 2.3rem;
+	font-weight: bold;
+	text-decoration: none;
+	color: #333;
+}
+
+.popup .close:hover {
+	color: rgb(233, 233, 33);
+}
+
+.popup .content-1,
+.content-2 {
+	max-height: 30%;
+	overflow: auto;
+    text-align: center;
+    margin-bottom: 0.8rem;
+}
+
+.popup .content-1 {
+    font-size: 1.5rem;
+    color: orangered;
+}
+
+.popup .content-2 {
+    color: #333;
+}
+
+.show {
+	visibility: visible !important;
+	opacity: 100 !important;
+}
+
+#play-again {
+    cursor: pointer;
+	background-color: #411941;
+	padding: 0.5rem 1rem 0.7rem 1rem;
+	font-size: 1.1rem;
+	display: block;
+	margin: 0 auto;
+	width: 30%;
+	font-family: 'Gloria Hallelujah', cursive;
+    color: #ffffff;
+    border: none;
+	border-radius: .4rem;
+}
+
+@keyframes pulse {
+	from {
+		transform: rotateY(180deg) scale3d(1, 1, 1);
+	}
+
+    40% {
+		transform: rotateY(180deg) scale3d(.25, .25, .25);
+	}
+
+	to {
+		transform: rotateY(180deg) scale3d(0, 0, 0,);
+	}
+}

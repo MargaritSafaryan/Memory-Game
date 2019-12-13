@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Chewy&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" href="css/style.css">
+    <title>Card Match Game</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="img/hat.svg" alt="Santa Claus hat" class="santas-hat">
+            <h1>Memory Game</h1>
+        </header>
+        <div class="prop-panel">
+            <div class="move-prop">
+                <span class="moves">0</span>               
+                <span class="move-name">Move(s)</span>
+            </div>
+            <div class="restart" onclick="newGame()">
+                <i class="fa fa-repeat"></i>
+            </div>
+        </div>
+        <div class="cards-container">
+            <div class="cards-wrapper">
+                <div class="card" data-framework="cherries" id="cherries-1">
+                    <img class="back-face" src="img/cherries.svg" alt="">
+                    <img class="front-face" src="img/shamrock.svg" alt="shamrock-card">
+                </div>
+                <div class="card" data-framework="duck" id="duck-1">
+                    <img class="back-face" src="img/duck.svg" alt="">
+                    <img class="front-face" src="img/shamrock.svg" alt="shamrock-card">
+                </div>
+                <div class="card" data-framework="warning-sign" id="warning-sign-1">
+                    <img class="back-face" src="img/warning-sign.svg" alt="">
+                    <img class="front-face" src="img/shamrock.svg" alt="shamrock-card">            
+                </div>
+                <div class="card" data-framework="popsicle" id="popsicle-1">
+                    <img class="back-face" src="img/popsicle.svg" alt="">
+                    <img class="front-face" src="img/shamrock.svg" alt="shamrock-card">
+                </div>
+                <div class="card" data-framework="cherries" id="cherries-2">
+                    <img class="back-face" src="img/cherries.svg" alt="">
+                    <img class="front-face" src="img/shamrock.svg" alt="shamrock-card">
+                </div>    
+                <div class="card" data-framework="grape" id="grape-1">
+                    <img class="back-face" src="img/grape.svg" alt="">
+                    <img class="front-face" src="img/shamrock.svg" alt="shamrock-card">
+                </div>
+                <div class="card" data-framework="anchor" id="anchor-1">
+                    <img class="back-face" src="img/anchor.svg" alt="">
+                    <img class="front-face" src="img/shamrock.svg" alt="shamrock-card">
+                </div>
+                <div class="card" data-framework="mushroom" id="mushroom-1">
+                    <img class="back-face" src="img/mushroom.svg" alt="">
+                    <img class="front-face" src="img/shamrock.svg" alt="shamrock-card">
+                </div>
+                <div class="card" data-framework="octopus" id="octopus-1">
+                    <img class="back-face" src="img/octopus.svg" alt="">
+                    <img class="front-face" src="img/shamrock.svg" alt="shamrock-card">>
+                </div>
+                <div class="card" data-framework="popsicle" id="popsicle-2">
+                    <img class="back-face" src="img/popsicle.svg" alt="">
+                    <img class="front-face" src="img/shamrock.svg" alt="shamrock-card">
+                </div>
+                <div class="card" data-framework="duck" id="duck-2">
+                    <img class="back-face" src="img/duck.svg" alt="">
+                    <img class="front-face" src="img/shamrock.svg" alt="shamrock-card">
+                </div>
+                <div class="card" data-framework="grape" id="grape-2">
+                    <img class="back-face" src="img/grape.svg" alt="">
+                    <img class="front-face" src="img/shamrock.svg" alt="shamrock-card">
+                </div>
+                <div class="card" data-framework="mushroom" id="mushroom-2">
+                    <img class="back-face" src="img/mushroom.svg" alt="">
+                    <img class="front-face" src="img/shamrock.svg" alt="shamrock-card">
+                </div>
+                <div class="card" data-framework="octopus" id="octopus-2">
+                    <img class="back-face" src="img/octopus.svg" alt="">
+                    <img class="front-face" src="img/shamrock.svg" alt="shamrock-card">
+                </div>
+                <div class="card" data-framework="anchor" id="anchor-2">
+                    <img class="back-face" src="img/anchor.svg" alt="">
+                    <img class="front-face" src="img/shamrock.svg" alt="shamrock-card">
+                </div>
+                <div class="card" data-framework="warning-sign" id="warning-sign-2">
+                    <img class="back-face" src="img/warning-sign.svg" alt="">
+                    <img class="front-face" src="img/shamrock.svg" alt="shamrock-card">
+                </div>
+            </div>
+        </div>
+        <div id="modal" class="overlay">
+            <div class="popup">
+                <a class="close" href=# >×</a>
+                <div class="content-1">
+                    Congratulations you won! 🎉
+                </div>
+                <div class="content-2">
+                    <p>You made <span id="finalMove"> </span> moves </p>
+                </div>
+                <button id="play-again" onclick="playAgain()">
+                    Play again
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>  
+</body>
+</html>
